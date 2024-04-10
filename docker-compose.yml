@@ -12,6 +12,29 @@ services:
     environment:
       - APP_ENV=dev
       - SCAN_CACHEABLE=false
+    links:
+      - mysql
+      
+  mysql:
+    image: mysql:latest
+    volumes:
+    - /var/lib/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=123456
+    - MYSQL_DATABASE=docker
+    ports:
+    - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+    - mysql
+    ports:
+    - 3306:80
+    environment:
+    MYSQL_USERNAME: 'root'
+    MYSQL_ROOT_PASSWORD: '123456'
+    PMA_HOST: 'mysql'
 
 networks:
   default:

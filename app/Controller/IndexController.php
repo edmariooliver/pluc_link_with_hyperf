@@ -19,7 +19,7 @@ class IndexController extends AbstractController
     {
         $user = $this->request->input('user', 'Hyperf');
         $method = $this->request->getMethod();
-        $user = Link::create(['link' => 'Hyperf', 'id' => "sadkajksdjk"]);
+        // $user = Link::create(['link' => 'asdasdasdasdsd', 'id' => "aaaaaaaaaaaaaakakakakakakakakakakaka"]);
         return [
             'method' => $method,
             'message' => Link::all(),

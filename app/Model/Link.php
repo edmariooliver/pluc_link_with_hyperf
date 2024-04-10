@@ -16,7 +16,7 @@ class Link extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected array $fillable = [];
+    protected array $fillable = ['id', 'link'];
 
     /**
      * The attributes that should be cast to native types.
